@@ -50,7 +50,7 @@ export default function LoginPage() {
                                     <input type="password" className="form-control" id="Password" placeholder="Entre com sua senha" />
                                 </div>
                                 <p style={{ textAlign: "center", paddingTop: "10px" }}>
-                                    <Link to="/login" className="col-5 me-2 btn btn-primary" onClick={() => logInUser()}>Entrar</Link>
+                                    <Link className="col-5 me-2 btn btn-primary" onClick={() => logInUser()}>Entrar</Link>
                                     <Link to="/register" className="col-5 btn btn-secondary">Registrar</Link>
                                 </p>
                             </form>
