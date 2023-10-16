@@ -38,7 +38,7 @@ function RegisterOwner() {
             UsuarioID: data.Usuario_id
         })
             .then(function (response) {
-                navigate("/Dashboard");
+                navigate(-1);
             })
             .catch(function (error) {
                 console.log(error, 'error');
@@ -51,7 +51,7 @@ function RegisterOwner() {
 
     return (
         <div className="container mt-4">
-            <h1>Registro de Veterinário</h1>
+            <h1>Registro de Proprietário</h1>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-md-10 mb-3">

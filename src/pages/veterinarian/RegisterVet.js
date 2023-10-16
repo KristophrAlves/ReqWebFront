@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 function RegisterVet() {
+    const userId = localStorage.getItem("UserId");
     const [data, setData] = useState({
         Nome: '',
         Cpf: '',
@@ -14,7 +15,7 @@ function RegisterVet() {
         Endereco: '',
         Cidade: '',
         Uf: '',
-        UsuarioID: 1
+        UsuarioID: userId
     });
 
     const navigate = useNavigate();
@@ -39,7 +40,7 @@ function RegisterVet() {
             Endereco: data.Endereco,
             Cidade: data.Cidade,
             Uf: data.Uf,
-            UsuarioID: 1
+            UsuarioID: data.UsuarioID
         })
             .then(function (response) {
                 navigate("/Dashboard");

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 function EditVet() {
+    const userId = localStorage.getItem("UserId");
     const [data, setData] = useState({
         Nome: '',
         Cpf: '',
@@ -14,7 +15,7 @@ function EditVet() {
         Endereco: '',
         Cidade: '',
         Uf: '',
-        UsuarioID: 1
+        UsuarioID: userId
     });
     const { id } = useParams(); // Obtém o ID do veterinário a ser editado
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ function EditVet() {
 
         axios.put(`http://127.0.0.1:5000/veterinario/${id}`, data)
             .then(function (response) {
-                navigate("/Dashboard");
+                navigate(-1);
             })
             .catch(function (error) {
                 console.log(error, 'error');

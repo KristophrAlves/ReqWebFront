@@ -52,7 +52,7 @@ function EditOwner() {
 
     return (
         <div className="container mt-4">
-            <h1>Editar Veterinário</h1>
+            <h1>Editar Proprietário</h1>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-md-10 mb-3">

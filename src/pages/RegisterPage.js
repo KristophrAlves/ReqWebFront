@@ -11,6 +11,15 @@ export default function RegisterPage() {
     const navigate = useNavigate();
 
     const registerUser = () => {
+        if (name.length === 0) {
+            alert("Preencha os campos");
+        }
+        else if (email.length === 0) {
+            alert("Preencha os campos");
+        } else if (password.length === 0) {
+            alert("Preencha os campos");
+        }
+
         axios.post('http://127.0.0.1:5000/createUser', {
             Nome: name,
             Email: email,
@@ -33,7 +42,8 @@ export default function RegisterPage() {
             <div className="container h-100">
                 <div className="container-fluid h-custom">
                     <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <h1 className="row d-flex justify-content-center align-items-center h-100">Requisições Veterinarias</h1>
+                        <div className="col-md-6 col-lg-6 col-xl-6">
                             <form>
                                 <div className="form-group mb-3">
                                     <label htmlFor="Name">Nome</label>
@@ -48,8 +58,8 @@ export default function RegisterPage() {
                                     <input type="password" className="form-control" id="Password" placeholder="Entre com sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
                                 <p style={{ textAlign: "center", paddingTop: "10px" }}>
-                                    <Link to="/login" className="col-5 me-2 btn btn-primary" onClick={() => registerUser()}>Entrar</Link>
-                                    <Link to="/register" className="col-5 btn btn-secondary">Registrar</Link>
+                                    <Link className="col-5 me-2 btn btn-primary" onClick={() => registerUser()}>Registrar</Link>
+                                    <Link className="col-5 btn btn-secondary" onClick={() => navigate(-1)}>voltar</Link>
                                 </p>
                             </form>
                         </div>
