@@ -44,7 +44,7 @@ function RegisterVet() {
     }, []);
 
     const getProp = () => {
-        axios.get('http://127.0.0.1:5000/Getproprietarios/1')
+        axios.get(`http://127.0.0.1:5000/Getproprietarios/${userId}`)
             .then(function (response) {
                 setListProp(response.data);
             })

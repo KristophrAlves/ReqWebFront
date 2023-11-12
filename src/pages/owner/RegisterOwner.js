@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 function RegisterOwner() {
+    const userId = localStorage.getItem("UserId");
     const [data, setData] = useState({
         Nome: '',
         Cpf: '',
@@ -12,7 +13,7 @@ function RegisterOwner() {
         Telefone: '',
         Cidade: '',
         Uf: '',
-        Usuario_id: 1
+        Usuario_id: userId
     });
 
     const navigate = useNavigate();

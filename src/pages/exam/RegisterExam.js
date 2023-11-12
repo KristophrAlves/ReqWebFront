@@ -27,7 +27,7 @@ function RegisterOwner() {
     }, []);
 
     const getProp = () => {
-        axios.get('http://127.0.0.1:5000/Getveterinarios/1')
+        axios.get(`http://127.0.0.1:5000/Getveterinarios/${userId}`)
             .then(function (response) {
                 setListVet(response.data);
                 getAnimais();
@@ -35,7 +35,7 @@ function RegisterOwner() {
     }
 
     const getAnimais = () => {
-        axios.get('http://127.0.0.1:5000/Getanimais/1')
+        axios.get(`http://127.0.0.1:5000/Getanimais/${userId}`)
             .then(function (response) {
                 setListAnimais(response.data);
             })

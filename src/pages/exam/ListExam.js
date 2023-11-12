@@ -95,6 +95,7 @@ function ListOwner(props) {
                             </div>
                             <div className="modal-body">
                                 <ComponentPDF id={selectedExame.ID} />
+                                {console.log(selectedExame)}
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={closeModal}>Fechar</button>
